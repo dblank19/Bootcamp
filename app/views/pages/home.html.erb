@@ -18,15 +18,15 @@
                 <h2 class="text-center">Free Membership</h2>
                 <h4>Sign up now for immediate access to our community of developers and sponsors</h4>
                 <h3 class="text-center"><strong>Free for life!</strong></h3>
-                <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-primary btn-lg btn-block" %>
+                <%= link_to "Sign-up", new_user_registration_path(plan: @free_plan.id), class: "btn btn-primary btn-lg btn-block" %>
             </div>
         </div>
         <div class="col-md-6">
             <div class="well">
                 <h2 class="text-center">Pro Membership</h2>
                 <h4>Pro members can use dev match to find peers, developers and sponsors to create awesome!</h4>
-                <h3 class="text-center"><strong>$10 per month</strong></h2>
-                <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-success btn-lg btn-block" %>
+                <h3 class="text-center"><strong>$9.99 per month</strong></h2>
+                <%= link_to "Sign-up", new_user_registration_path(plan: @pro_plan.id), class: "btn btn-success btn-lg btn-block" %>
             </div>
         </div>
     </div>
