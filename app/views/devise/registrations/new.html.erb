@@ -1,35 +1,30 @@
 <div class=“row”>
-  <div class="col-md-4 col-md-offset-4">
-    <div class="well">
-      <h2>Sign up</h2>
-      
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-      
-        <div class="field form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-        </div>
-      
-        <div class="field form-group">
-          <%= f.label :password %>
-          <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-        </div>
-      
-        <div class="field form-group">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-        </div>
-      
-        <div class="actions form-group">
-          <%= f.submit "Sign up", class: 'btn btn-success' %>
-        </div>
-      <% end %>
-      
+  <div class="col-md-8 well">
+    <% if params[:plan] == '2' %>
+      <h1>Pro Account</h1>
+      <p>Pro members can use dev match to find peers, developers and sponsors to create awesome!</p>
+      <%= render "pro_form" %>
       <%= render "devise/shared/links" %>
-      </div>
+    <% else %>
+      <h1>Free Account</h1>
+      <p>Sign up now for immediate access to our community of developers and sponsors</p>
+      <%= render "free_form" %>
+      <%= render "devise/shared/links" %>
+    <% end %>
+  </div>
+  <div class="col-md-3 col-md-offset-1 well">
+    <% if params[:plan] == '2' %>
+      
+    <% else %>
+      
+      <p>Call to Action to switch to Pro Account</p>
+    <% end %>
+  </div>
+  
+      
+      
+      
+      
+     
   </div>
 </div>
